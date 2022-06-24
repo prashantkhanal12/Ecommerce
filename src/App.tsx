@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Shipping } from 'pages';
+import { Route, Routes } from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <h3 className="text-center">
-        Switch to the feature/shipping details v1.0.0
-      </h3>
-    </div>
+    <Routes>
+      <Route element={<Shipping />} path="/" />
+    </Routes>
   );
 };
 

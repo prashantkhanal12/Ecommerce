@@ -1,36 +1,36 @@
 @font-face {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   src: url(./assets/fonts/Roboto-Thin.ttf);
   font-style: normal;
   font-weight: 100;
 }
 
 @font-face {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   src: url(./assets/fonts/Roboto-Light.ttf);
   font-style: normal;
   font-weight: 300;
 }
 @font-face {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   src: url(./assets/fonts/Roboto-Regular.ttf);
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   src: url(./assets/fonts/Roboto-Medium.ttf);
   font-style: normal;
   font-weight: 500;
 }
 @font-face {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   src: url(./assets/fonts/Roboto-Bold.ttf);
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   src: url(./assets/fonts/Roboto-Black.ttf);
   font-style: normal;
   font-weight: 900;
@@ -38,8 +38,8 @@
 
 :root {
   --color-primary: #e7302a;
+  --color-secondary: #2e2e2e;
   --color-white: #ffffffff;
-  --color-black: #2e2e2e;
   --color-light-black: #393939;
 }
 *,
@@ -49,7 +49,7 @@
 }
 * {
   margin: 0;
-  font-family: 'Roboto', sans-serif, sans-serif;
+  font-family: 'Roboto';
 }
 li {
   list-style: none;
@@ -92,8 +92,9 @@ h6 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   transition: 0.3s all ease-in-out;
+  color: inherit !important;
 }
 a:hover {
   color: var(--color-primary) !important;
@@ -110,4 +111,190 @@ li {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* over write */
+textarea:focus-visible {
+  outline: none !important;
+}
+.textarea-border {
+  border: 1px solid rgba(17, 17, 17, 0.178) !important;
+  border-radius: 1rem !important;
+  padding: 1rem;
+}
+.rounded-8 {
+  border-radius: 0.8rem;
+}
+/*----------utility class---------- */
+.border-bottom {
+  border-bottom: 1px solid gray;
+}
+
+.card__container {
+  background: #ffffff;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.04);
+  border-radius: 0.875rem;
+  border: 0.1px solid #5e5c5c40;
+}
+
+/* flex */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* switch btn */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 14px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 9px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-primary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* fonts weight */
+
+.fw-400 {
+  font-weight: 400;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-900 {
+  font-weight: 900;
+}
+
+/* font-size */
+.fs-14 {
+  font-size: 0.875rem;
+}
+.fs-16 {
+  font-size: 1rem;
+}
+.fs-18 {
+  font-size: 1.125rem;
+}
+.fs-20 {
+  font-size: 1.25rem;
+}
+.fs-24 {
+  font-size: 1.5rem;
+}
+.fs-30 {
+  font-size: 1.875rem;
+}
+
+/* background  */
+.bg-primary-color {
+  background-color: var(--color-primary);
+}
+.bg-secondary-color {
+  background-color: var(--color-secondary);
+}
+.bg-white-color {
+  background-color: var(--color-white);
+}
+.bg-dark-white-color {
+  background-color: #f9f9f9;
+}
+.outline-color-blue {
+  outline: 1px solid rgb(28, 28, 199);
+}
+/* color */
+.color-white {
+  color: var(--color-white);
+}
+.color-primary {
+  color: var(--color-primary);
+}
+.color-secondary {
+  color: var(--color-secondary);
+}
+.color-light-black {
+  color: var(--color-light-black);
+}
+/* footer */
+.footer__heading__logo {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 10px;
+  text-transform: uppercase;
 }
